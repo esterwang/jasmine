@@ -1,6 +1,6 @@
 ### 测试驱动开发—— TDD 
 
-* **什么是 TDD **
+* **什么是 TDD**
 
 三层含义：
  1. Test-Driven Development，测试驱动开发。
@@ -12,18 +12,100 @@
 
 *TDD 并不能直接提高设计能力，它只是给你更多机会和保障去改善设计。*
 
-* **为什么要 TDD **
-回忆疯狂改 BUG 的 C 语言课设
+* **为什么要 TDD**
+
+回忆疯狂改 BUG 的 C 语言课设。
+
+确定课设主题 ➡ 设计系统功能 ➡ 设计函数功能和调用关系 ➡ 写代码 ➡ 调试代码 ➡ 发现问题 ➡ 修改代码 ➡ 调试代码 ➡ ……
+
+TDD 的流程：
+
+确定课设主题 ➡ 设计系统功能 ➡ **设计测试用例 ➡ 编写测试代码 ➡ 写一段能通过测试的代码 ➡ 跑测试（测试通过）** ➡ 设计函数功能和调用关系 ➡ 写代码➡ 跑测试 ➡ 发现问题的具体位置 ➡ 修改代码 ➡ 跑测试 ➡ ……
+
+以FizzBuzz 为例
+写一个程序打印1到100这些数字。
+遇到数字为3的倍数打印“Fizz”替代数字，
+遇到数字为5的倍数打印“Buzz”替代数字，
+既是3的倍数又是5的倍数打印“FizzBuzz”。
+
 
 **Step 1 分解任务，分离关注点**
 
+关注点：需求，实现，设计。
+
+需求：
+1. 打印1-100
+2. 遇到3的倍数打印Fizz
+3. 遇到5的倍数打印Buzz
+4. 遇到3和5的公倍数打印FizzBuzz
+
+
 **Step 2 列 Example**
 
-**Step 3 写测试**
+Example：
 
+|  | Input | Ouput |
+| ------ | ------ | ------ |
+| 普通数字 | 1 | "1" |
+| 3的倍数 | 3 | "Fizz" |
+| 5的倍数 | 5 | "Buzz" |
+| 3和5的倍数 | 15 | "FizzBuzz" |
+
+**Step 3 写测试**
+```
+describe("FizzBuzz",function(){
+ it("return ordinary number", function(){
+  let number = 1;
+  let result = fizzbuzz(number);
+  expect(result).to.equal("1");
+ }); 
+ it("return fizz", function(){
+  let number = 3;
+  let result = fizzbuzz(number);
+  expect(result).to.equal("Fizz");
+ }); 
+ it("return buzz", function(){
+  let number = 5;
+  let result = fizzbuzz(number);
+  expect(result).to.equal("Buzz");
+ }); 
+ it("return fizzbuzz", function(){
+  let number = 15;
+  let result = fizzbuzz(number);
+  expect(result).to.equal("FizzBuzz");
+ }); 
+});
+```
 **Step 4 写实现**
 
+(只要能跑通测试就行)
+```
+function fizzbuzz(number){
+  return "1";
+}
+```
+
 **Step 5 重构**
+
+（逻辑严谨的正式代码）
+```
+function fizzbuzz(number){
+  for (var number = 1; number <= 100; number++) { 
+      if (number % 15 === 0) {
+          console.log('FizzBuzz');
+      } 
+      else if (number % 3 === 0) {
+          console.log('Fizz');
+      } 
+      else if (number % 5 === 0) {
+          console.log('Buzz');
+      } 
+      else {
+          console.log(i);
+      }
+  }
+}
+```
 
 **Step 6 写完**
 
