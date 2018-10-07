@@ -32,20 +32,38 @@ it(string, function)方法有两个参数
 **断言库**
 
 数值比较 
-toBe(===);not.toBe;toBeGreaterThan;toBeLessThan;toBeGreaterThanOrEqual;toBeLessThanOrEqual;toBeCloseTo（四舍五入后比较，有两个参数，一个是值，一个是精度）。
+```
+toBe(===);
+not.toBe;
+toBeGreaterThan;
+toBeLessThan;
+toBeGreaterThanOrEqual;
+toBeLessThanOrEqual;
+toBeCloseTo（四舍五入后比较，有两个参数，一个是值，一个是精度）。
+```
 
 布尔值比较 
-toBeTruthy;toBeFalsy 
-注意这里的falsy不是简单的false，javascript中falsy值有：0，false，空的function，空的array和空的object。 
-详细包括：false，null，undefined，0，NaN,”(空字符串)，”“(空字符串)，document.all
-
+```
+toBeTruthy;
+toBeFalsy 
+\\注意这里的falsy不是简单的false，javascript中falsy值有：0，false，空的function，空的array和空的object。 
+\\详细包括：false，null，undefined，0，NaN,”(空字符串)，”“(空字符串)，document.all
+```
 对象比较 
-toEqual，toBeDefined，toBeUndefined,toBeNull
-
+```
+toEqual，
+toBeDefined，
+toBeUndefined,
+toBeNull
+```
 其他 
-toMatch,toBeNaN,toContain,toThrow,toThrowError
-
-
+```
+toMatch,
+toBeNaN,
+toContain,
+toThrow,
+toThrowError
+```
 
 
 
