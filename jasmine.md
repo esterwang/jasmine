@@ -68,5 +68,9 @@ toThrowError
 
 
 ### 参考资料
+
 [jasmine学习笔记](https://www.jianshu.com/p/f8f66a8a3907)
+
 [Jasmine的断言](https://blog.csdn.net/wangmiaoyan/article/details/79082985)
+
+[从零开始使用jasmine进行测试](https://www.jianshu.com/p/64ff8cc11b28)
